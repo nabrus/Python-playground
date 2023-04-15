@@ -1,8 +1,13 @@
+import random
+
+cards = []
 suits = ["spades", "clubs", "hearts", "diamonds"]
-suit = suits[2]
-rank = "K"
-value = 10
-print(f"Your card is: {rank} of {suit}")
-suits.append("snakes")
+ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 for suit in suits:
-    print(suit)
+    for rank in ranks:
+        cards.append([suit, rank])
+
+# From imported `random` library - randomize the cards
+random.shuffle(cards)
+
+card =
