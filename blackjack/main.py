@@ -10,4 +10,4 @@ for suit in suits:
 # From imported `random` library - randomize the cards
 random.shuffle(cards)
 
-card =
+card = cards.pop()
