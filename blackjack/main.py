@@ -8,7 +8,7 @@ for suit in suits:
         cards.append([suit, rank])
 
 
-# Shuffle function
+# Shuffle the deck function
 def shuffle():
     # From imported `random` library - randomize the cards
     random.shuffle(cards)
