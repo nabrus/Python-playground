@@ -21,4 +21,6 @@ def deal():
 
 
 shuffle()
-print(deal())
+card = (deal())
+
+print(card)
