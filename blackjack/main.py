@@ -15,12 +15,18 @@ def shuffle():
 
 
 # Dealing the cards function
-def deal():
-    card = cards.pop()
-    return card
+def deal(number):
+    cards_dealt = []
+    # Loops as many times as what is entered as `number`
+    for x in range(number):
+        card = cards.pop()
+        cards_dealt.append(card)
+    return cards_dealt
 
 
 shuffle()
-card = (deal())
+cards_dealt = (deal(2))
+card = cards_dealt[0]
 
+print(cards_dealt)
 print(card)
