@@ -2,6 +2,7 @@ import random
 
 cards = []
 suits = ["spades", "clubs", "hearts", "diamonds"]
+# Dictionaries in a list
 ranks = [
     {"rank": "A", "value": 11},
     {"rank": "1", "value": 1},
@@ -43,4 +44,4 @@ def deal(number):
 shuffle()
 card = deal(1)[0]
 
-print(card)
+print(card[1]["value"])
