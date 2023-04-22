@@ -29,12 +29,21 @@ class Deck:
 
     def shuffle(self):  # Shuffle the deck method
         # From imported `random` library - randomize the cards
-        random.shuffle(self.cards)
+        if len(self.cards) > 1:
+            random.shuffle(self.cards)
 
     def deal(self, number):  # Dealing the cards method
         cards_dealt = []
         # Loops as many times as what is passed in  as `number`
         for x in range(number):
-            card = self.cards.pop()
-            cards_dealt.append(card)
+            if len(self.cards) > 0:
+                card = self.cards.pop()
+                cards_dealt.append(card)
         return cards_dealt
+
+
+deck_1 = Deck()
+deck_2 = Deck()
+deck_2.shuffle()
+print(deck_1.cards)
+print(deck_2.cards)
