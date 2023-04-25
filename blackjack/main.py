@@ -7,7 +7,7 @@ class Card:
         self.rank = rank
 
     def __str__(self):  # provide a string representation of an object.
-        return f"{self.rank} of {self.suit}"
+        return f"{self.rank['rank']} of {self.suit}"
 
 
 class Deck:
@@ -34,7 +34,7 @@ class Deck:
 
         for suit in suits:
             for rank in ranks:
-                self.cards.append([suit, rank])
+                self.cards.append(Card(suit, rank))
 
     def shuffle(self):  # Shuffle the deck method
         # From imported `random` library - randomize the cards
@@ -49,7 +49,3 @@ class Deck:
                 card = self.cards.pop()
                 cards_dealt.append(card)
         return cards_dealt
-
-
-card = Card(f"{hearts} of {"rank": "K", "value": 10}")
-print(card)
