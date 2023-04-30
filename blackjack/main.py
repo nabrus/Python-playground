@@ -77,11 +77,24 @@ class Hand:
         self.calculate_value()
         return self.value
 
+    def is_blackjack(self):
+        #  returns True or False if there is a blackjack
+        return self.get_value() == 21
+
+    def display(self):
+        print(f'''{"Dealer's" if self.dealer else "Your"} hand: ''')
+        for card in self.cards:
+            print(card)
+
+        if not self.dealer:
+            print("Value:", self.get_value())
+            print()
+
 
 deck = Deck()
 deck.shuffle()
 
 hand = Hand()
 hand.add_card(deck.deal(2))
-print(hand.cards[0], hand.cards[1])
-print(hand.get_value())
+
+hand.display()
