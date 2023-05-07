@@ -99,10 +99,6 @@ class Hand:
             print()
 
 
-deck = Deck()
-deck.shuffle()
-
-hand = Hand()
-hand.add_card(deck.deal(2))
-
-hand.display()
+class Game:
+    def play(self):
+        game_number = 0
