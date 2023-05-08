@@ -141,7 +141,7 @@ class Game:
                     choice = input("Please enter 'Hit' or 'Stand' (or H/S) ").lower()
                     print()
                 if choice in ["hit", "h"]:
-                    player_hand.add_card(deck.deal())
+                    player_hand.add_card(deck.deal(1))
                     player_hand.display()
 
             if self.check_winner(player_hand, dealer_hand):
@@ -151,7 +151,7 @@ class Game:
             dealer_hand_value = dealer_hand.get_value()
 
             while dealer_hand_value < 17:
-                dealer_hand.add_card(deck.deal())
+                dealer_hand.add_card(deck.deal(1))
                 dealer_hand_value = dealer_hand.get_value()
 
             dealer_hand.display(show_all_dealer_cards=True)
@@ -184,15 +184,15 @@ class Game:
             elif dealer_hand.is_blackjack():
                 print("Dealer has blackjack. Dealer wins! 💩")
                 return True
+        else:
+            if player_hand.get_value() > dealer_hand.get_value():
+                print("You win!!! 💪")
+            elif player_hand.get_value() == dealer_hand.get_value():
+                print("Tie!")
             else:
-                if player_hand.get_value() > dealer_hand.get_value():
-                    print("You win!!! 💪")
-                elif player_hand.get_value() == dealer_hand.get_value():
-                    print("Tie!")
-                else:
-                    print("Dealer wins! 😹")
-                return True
-            return False
+                print("Dealer wins! 😹")
+            return True
+        return False
 
 
 g = Game()
